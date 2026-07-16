@@ -15,142 +15,142 @@ description <https://fireforce6.github.io/mission-control/operational-analysis/s
         base:description "Scenario showing flow when a critical notification is produced and acknowledged."
     ]
 
-    instance Dashboard_Lifeline : scenario:Lifeline [
+    instance Dashboard.Lifeline : scenario:Lifeline [
         base:description "Dashboard lifeline"
         scenario:lifelineOf RespondToCriticalNotification
         scenario:represents entities:DashboardSystem
     ]
 
-    instance AIWarden_Lifeline : scenario:Lifeline [
+    instance AIWarden.Lifeline : scenario:Lifeline [
         base:description "AI Fire Warden lifeline"
         scenario:lifelineOf RespondToCriticalNotification
         scenario:represents entities:AIFireWarden
     ]
 
-    instance Operator_Lifeline : scenario:Lifeline [
+    instance Operator.Lifeline : scenario:Lifeline [
         base:description "Operator lifeline (human in control-room or field UI)"
         scenario:lifelineOf RespondToCriticalNotification
         scenario:represents stakeholders:Operator
     ]
 
-    instance FireCloud_Lifeline : scenario:Lifeline [
+    instance FireCloud.Lifeline : scenario:Lifeline [
         base:description "Fire Cloud lifeline (source of telemetry/alerts)"
         scenario:lifelineOf RespondToCriticalNotification
         scenario:represents entities:FireCloud
     ]
 
-    instance Dashboard_TP1 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
+    instance Dashboard.TP1 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
     ]
 
-    instance Dashboard_TP2 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP1
+    instance Dashboard.TP2 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP1
     ]
 
-    instance Dashboard_TP3 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP2
+    instance Dashboard.TP3 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP2
     ]
 
-    instance Dashboard_TP4 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP3
+    instance Dashboard.TP4 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP3
     ]
 
-    instance Dashboard_TP5 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP4
+    instance Dashboard.TP5 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP4
     ]
 
-    instance Dashboard_TP6 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP5
+    instance Dashboard.TP6 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP5
     ]
 
-    instance AIWarden_TP1 : scenario:TimePoint [
-        scenario:occursOn AIWarden_Lifeline
+    instance AIWarden.TP1 : scenario:TimePoint [
+        scenario:occursOn AIWarden.Lifeline
     ]
 
-    instance AIWarden_TP2 : scenario:TimePoint [
-        scenario:occursOn AIWarden_Lifeline
-        scenario:after AIWarden_TP1
+    instance AIWarden.TP2 : scenario:TimePoint [
+        scenario:occursOn AIWarden.Lifeline
+        scenario:after AIWarden.TP1
     ]
 
-    instance AIWarden_TP3 : scenario:TimePoint [
-        scenario:occursOn AIWarden_Lifeline
-        scenario:after AIWarden_TP2
+    instance AIWarden.TP3 : scenario:TimePoint [
+        scenario:occursOn AIWarden.Lifeline
+        scenario:after AIWarden.TP2
     ]
 
-    instance AIWarden_TP4 : scenario:TimePoint [
-        scenario:occursOn AIWarden_Lifeline
-        scenario:after AIWarden_TP3
+    instance AIWarden.TP4 : scenario:TimePoint [
+        scenario:occursOn AIWarden.Lifeline
+        scenario:after AIWarden.TP3
     ]
 
-    instance Operator_TP1 : scenario:TimePoint [
-        scenario:occursOn Operator_Lifeline
+    instance Operator.TP1 : scenario:TimePoint [
+        scenario:occursOn Operator.Lifeline
     ]
 
-    instance Operator_TP2 : scenario:TimePoint [
-        scenario:occursOn Operator_Lifeline
-        scenario:after Operator_TP1
+    instance Operator.TP2 : scenario:TimePoint [
+        scenario:occursOn Operator.Lifeline
+        scenario:after Operator.TP1
     ]
 
-    instance FireCloud_TP1 : scenario:TimePoint [
-        scenario:occursOn FireCloud_Lifeline
+    instance FireCloud.TP1 : scenario:TimePoint [
+        scenario:occursOn FireCloud.Lifeline
     ]
 
-    instance SF_DashboardMonitoring : scenario:StateFragment [
+    instance SF.DashboardMonitoring : scenario:StateFragment [
         base:description "Dashboard is in Monitoring when it receives the alert"
-        scenario:atTime Dashboard_TP1
+        scenario:atTime Dashboard.TP1
         scenario:checks sm1:Monitoring
     ]
 
-    instance SF_WardenObserving : scenario:StateFragment [
+    instance SF.WardenObserving : scenario:StateFragment [
         base:description "AI Warden is Observing at scenario start"
-        scenario:atTime AIWarden_TP1
+        scenario:atTime AIWarden.TP1
         scenario:checks sm2:Observing
     ]
 
     instance M1 : scenario:Message [
         base:description "FireCloud sends critical alert to Dashboard"
-        scenario:startsAt FireCloud_TP1
-        scenario:endsAt Dashboard_TP2
+        scenario:startsAt FireCloud.TP1
+        scenario:endsAt Dashboard.TP2
         scenario:carries items:alert
     ]
 
-    instance Exec_UpdateMap : scenario:Execution [
+    instance Exec.UpdateMap : scenario:Execution [
         base:description "Dashboard updates map visualization after receiving alert"
-        scenario:startsAt Dashboard_TP2
-        scenario:endsAt Dashboard_TP3
+        scenario:startsAt Dashboard.TP2
+        scenario:endsAt Dashboard.TP3
         scenario:executes processes:A3
     ]
 
     instance M2 : scenario:Message [
         base:description "Dashboard displays alert to Operator"
-        scenario:startsAt Dashboard_TP4
-        scenario:endsAt Operator_TP1
+        scenario:startsAt Dashboard.TP4
+        scenario:endsAt Operator.TP1
         scenario:carries items:alert
     ]
 
     instance M3 : scenario:Message [
         base:description "Operator acknowledges alert (approval or ACK)"
-        scenario:startsAt Operator_TP2
-        scenario:endsAt Dashboard_TP5
+        scenario:startsAt Operator.TP2
+        scenario:endsAt Dashboard.TP5
         scenario:carries items:approval
     ]
 
     instance M4 : scenario:Message [
         base:description "Dashboard forwards acknowledgment to AI Warden"
-        scenario:startsAt Dashboard_TP6
-        scenario:endsAt AIWarden_TP2
+        scenario:startsAt Dashboard.TP6
+        scenario:endsAt AIWarden.TP2
         scenario:carries items:approval
     ]
 
     instance M5 : scenario:Message [
         base:description "AI Warden receives acknowledgment and updated internal state / telemetry"
-        scenario:startsAt AIWarden_TP3
-        scenario:endsAt AIWarden_TP4
+        scenario:startsAt AIWarden.TP3
+        scenario:endsAt AIWarden.TP4
         scenario:carries items:approval
     ]
 }

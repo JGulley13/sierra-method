@@ -14,120 +14,120 @@ description <https://fireforce6.github.io/mission-control/operational-analysis/s
         base:description "Scenario demonstrating an Operator viewing historical fire states on the dashboard."
     ]
 
-    instance Operator_Lifeline : scenario:Lifeline [
+    instance Operator.Lifeline : scenario:Lifeline [
         base:description "Operator lifeline"
         scenario:lifelineOf ViewHistoricalData
         scenario:represents stakeholders:Operator
     ]
 
-    instance Dashboard_Lifeline : scenario:Lifeline [
+    instance Dashboard.Lifeline : scenario:Lifeline [
         base:description "Dashboard lifeline"
         scenario:lifelineOf ViewHistoricalData
         scenario:represents entities:DashboardSystem
     ]
 
-    instance FireCloud_Lifeline : scenario:Lifeline [
+    instance FireCloud.Lifeline : scenario:Lifeline [
         base:description "Fire Cloud lifeline (source of historical items)"
         scenario:lifelineOf ViewHistoricalData
         scenario:represents entities:FireCloud
     ]
 
-    instance Operator_TP1 : scenario:TimePoint [
-        scenario:occursOn Operator_Lifeline
+    instance Operator.TP1 : scenario:TimePoint [
+        scenario:occursOn Operator.Lifeline
     ]
 
-    instance Operator_TP2 : scenario:TimePoint [
-        scenario:occursOn Operator_Lifeline
+    instance Operator.TP2 : scenario:TimePoint [
+        scenario:occursOn Operator.Lifeline
     ]
 
-    instance Dashboard_TP1 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
+    instance Dashboard.TP1 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
     ]
 
-    instance Dashboard_TP2 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP1
+    instance Dashboard.TP2 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP1
     ]
 
-    instance Dashboard_TP3 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP2
+    instance Dashboard.TP3 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP2
     ]
 
-    instance Dashboard_TP4 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP3
+    instance Dashboard.TP4 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP3
     ]
 
-    instance Dashboard_TP5 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP4
+    instance Dashboard.TP5 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP4
     ]
 
-    instance Dashboard_TP6 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP5
+    instance Dashboard.TP6 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP5
     ]
 
-    instance Dashboard_TP7 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP6
+    instance Dashboard.TP7 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP6
     ]
 
-    instance FireCloud_TP1 : scenario:TimePoint [
-        scenario:occursOn FireCloud_Lifeline
+    instance FireCloud.TP1 : scenario:TimePoint [
+        scenario:occursOn FireCloud.Lifeline
     ]
 
-    instance FireCloud_TP2 : scenario:TimePoint [
-        scenario:occursOn FireCloud_Lifeline
-        scenario:after FireCloud_TP1
+    instance FireCloud.TP2 : scenario:TimePoint [
+        scenario:occursOn FireCloud.Lifeline
+        scenario:after FireCloud.TP1
     ]
 
     instance M1 : scenario:Message [
         base:description "Operator requests historical items via dashboard UI"
-        scenario:startsAt Operator_TP1
-        scenario:endsAt Dashboard_TP1
+        scenario:startsAt Operator.TP1
+        scenario:endsAt Dashboard.TP1
         scenario:carries items:history_request
     ]
 
     instance M2 : scenario:Message [
         base:description "Dashboard forwards history request to FireCloud"
-        scenario:startsAt Dashboard_TP2
-        scenario:endsAt FireCloud_TP1
+        scenario:startsAt Dashboard.TP2
+        scenario:endsAt FireCloud.TP1
         scenario:carries items:history_request
     ]
 
-    instance Exec_RequestHistory : scenario:Execution [
+    instance Exec.RequestHistory : scenario:Execution [
         base:description "NetworkInterface issues history fetch to FireCloud (A1)."
-        scenario:startsAt FireCloud_TP1
-        scenario:endsAt FireCloud_TP2
+        scenario:startsAt FireCloud.TP1
+        scenario:endsAt FireCloud.TP2
         scenario:executes processes:A1
     ]
 
     instance M3 : scenario:Message [
         base:description "FireCloud returns historical telemetry to Dashboard"
-        scenario:startsAt FireCloud_TP2
-        scenario:endsAt Dashboard_TP3
+        scenario:startsAt FireCloud.TP2
+        scenario:endsAt Dashboard.TP3
         scenario:carries items:history_response
     ]
 
-    instance Exec_RenderHistory : scenario:Execution [
+    instance Exec.RenderHistory : scenario:Execution [
         base:description "Dashboard parses history and updates the map/historical layer (A2/A3)."
-        scenario:startsAt Dashboard_TP4
-        scenario:endsAt Dashboard_TP5
+        scenario:startsAt Dashboard.TP4
+        scenario:endsAt Dashboard.TP5
         scenario:executes processes:A2
     ]
 
     instance M4 : scenario:Message [
         base:description "Dashboard renders historical items on the map/time-slider"
-        scenario:startsAt Dashboard_TP6
-        scenario:endsAt Operator_TP2
+        scenario:startsAt Dashboard.TP6
+        scenario:endsAt Operator.TP2
         scenario:carries items:history_response
     ]
 
-    instance SF_DashboardHistorical : scenario:StateFragment [
+    instance SF.DashboardHistorical : scenario:StateFragment [
         base:description "Dashboard is in HistoricalReview while rendering and user inspects past state."
-        scenario:atTime Dashboard_TP7
+        scenario:atTime Dashboard.TP7
         scenario:checks sm1:HistoricalReview
     ]
 }

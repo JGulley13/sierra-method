@@ -8,7 +8,8 @@
       "width": 280,
       "height": 140,
       "file": "src/method/md/images/sierra.png",
-      "shape": "rectangle"
+      "shape": "rectangle",
+      "z": 16
     },
     {
       "id": "title",
@@ -21,7 +22,8 @@
       "textAlign": "center",
       "text": "# Sierra Method\n### Mission Control — Fire Force VI\nA model-based systems engineering workflow, from context to architecture.",
       "label": "Sierra Method — Mission Control",
-      "color": "3"
+      "color": "3",
+      "z": 17
     },
     {
       "id": "group-context",
@@ -32,7 +34,8 @@
       "height": 433,
       "label": "Context Analysis",
       "text": "Context Analysis",
-      "color": "1"
+      "color": "1",
+      "z": 9
     },
     {
       "id": "ctx-1",
@@ -46,7 +49,8 @@
       "textAlign": "center",
       "parent": "group-context",
       "text": "1 · [Identify Stakeholders](Context%20Analysis/Stakeholders.md)",
-      "label": "Identify Stakeholders"
+      "label": "Identify Stakeholders",
+      "z": 18
     },
     {
       "id": "ctx-2",
@@ -60,7 +64,8 @@
       "textAlign": "center",
       "parent": "group-context",
       "text": "2 · [Elicit Concerns](Context%20Analysis/Concerns.md)",
-      "label": "Elicit Stakeholder Concerns"
+      "label": "Elicit Stakeholder Concerns",
+      "z": 19
     },
     {
       "id": "ctx-3",
@@ -74,7 +79,8 @@
       "textAlign": "center",
       "parent": "group-context",
       "text": "3 · [Define Missions](Context%20Analysis/Missions.md)",
-      "label": "Define Missions"
+      "label": "Define Missions",
+      "z": 20
     },
     {
       "id": "ctx-4",
@@ -88,7 +94,8 @@
       "textAlign": "center",
       "parent": "group-context",
       "text": "4 · [Establish Objectives](Context%20Analysis/Objectives.md)",
-      "label": "Establish Mission Objectives"
+      "label": "Establish Mission Objectives",
+      "z": 21
     },
     {
       "id": "ctx-5",
@@ -102,7 +109,8 @@
       "textAlign": "center",
       "parent": "group-context",
       "text": "5 · [Context Dashboard](Context%20Analysis/Dashboard.md)",
-      "label": "View Context Dashboard"
+      "label": "View Context Dashboard",
+      "z": 22
     },
     {
       "id": "ctx-6",
@@ -116,7 +124,8 @@
       "textAlign": "center",
       "parent": "group-context",
       "text": "5 · [Context Dashboard 2](Context%20Analysis/Dashboard2.canvas)",
-      "label": "View Context Dashboard 2"
+      "label": "View Context Dashboard 2",
+      "z": 23
     },
     {
       "id": "group-operational",
@@ -127,7 +136,8 @@
       "height": 693,
       "label": "Operational Analysis",
       "text": "Operational Analysis",
-      "color": "5"
+      "color": "5",
+      "z": 8
     },
     {
       "id": "ops-1",
@@ -141,7 +151,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "1 · [Identify Capabilities](Operational%20Analysis/Capabilities.md)",
-      "label": "Identify Operational Capabilities"
+      "label": "Identify Operational Capabilities",
+      "z": 24
     },
     {
       "id": "ops-2",
@@ -155,7 +166,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "2 · [Identify Entities](Operational%20Analysis/Entities.md)",
-      "label": "Identify Operational Entities"
+      "label": "Identify Operational Entities",
+      "z": 25
     },
     {
       "id": "ops-3",
@@ -169,7 +181,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "3 · [Define Items](Operational%20Analysis/Items.md)",
-      "label": "Define Operational Items"
+      "label": "Define Operational Items",
+      "z": 26
     },
     {
       "id": "ops-4",
@@ -183,7 +196,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "4 · [Define Activities](Operational%20Analysis/Activities.md)",
-      "label": "Define Operational Activities"
+      "label": "Define Operational Activities",
+      "z": 27
     },
     {
       "id": "ops-5",
@@ -197,7 +211,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "5 · [Define Processes](Operational%20Analysis/Processes.md)",
-      "label": "Define Operational Processes"
+      "label": "Define Operational Processes",
+      "z": 28
     },
     {
       "id": "ops-6",
@@ -211,7 +226,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "6 · Define State Machines — [1](Operational%20Analysis/statemachines/StateMachine1.md) · [2](Operational%20Analysis/statemachines/StateMachine2.md) · [3](Operational%20Analysis/statemachines/StateMachine3.md)",
-      "label": "Define Operational State Machines"
+      "label": "Define Operational State Machines",
+      "z": 29
     },
     {
       "id": "ops-7",
@@ -225,7 +241,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "7 · Define Scenarios — [1](Operational%20Analysis/scenarios/Scenario1.md) · [2](Operational%20Analysis/scenarios/Scenario2.md) · [3](Operational%20Analysis/scenarios/Scenario3.md)",
-      "label": "Define Operational Scenarios"
+      "label": "Define Operational Scenarios",
+      "z": 30
     },
     {
       "id": "ops-8",
@@ -239,7 +256,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "8 · [Define Requirements](Operational%20Analysis/Requirements.md)",
-      "label": "Define Operational Requirements"
+      "label": "Define Operational Requirements",
+      "z": 31
     },
     {
       "id": "ops-9",
@@ -253,7 +271,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "9 · [Operations Dashboard](Operational%20Analysis/Dashboard.md)",
-      "label": "View Operations Dashboard"
+      "label": "View Operations Dashboard",
+      "z": 32
     },
     {
       "id": "ops-10",
@@ -267,7 +286,8 @@
       "textAlign": "center",
       "parent": "group-operational",
       "text": "10 · [Operations Dashboard 2](Operational%20Analysis/Dashboard2.md)",
-      "label": "View Operations Dashboard 2 (WASM Notebook)"
+      "label": "View Operations Dashboard 2 (WASM Notebook)",
+      "z": 33
     },
     {
       "id": "group-system",
@@ -278,7 +298,8 @@
       "height": 238,
       "label": "System Analysis",
       "text": "System Analysis",
-      "color": "4"
+      "color": "4",
+      "z": 7
     },
     {
       "id": "sys-1",
@@ -292,7 +313,8 @@
       "textAlign": "center",
       "parent": "group-system",
       "text": "1 · [Define Components](System%20Analysis/Components.md)",
-      "label": "Define System Components"
+      "label": "Define System Components",
+      "z": 34
     },
     {
       "id": "sys-2",
@@ -306,7 +328,8 @@
       "textAlign": "center",
       "parent": "group-system",
       "text": "2 · [Manage Masses](System%20Analysis/Masses.md)",
-      "label": "Manage Component Masses"
+      "label": "Manage Component Masses",
+      "z": 35
     },
     {
       "id": "sys-3",
@@ -320,7 +343,8 @@
       "textAlign": "center",
       "parent": "group-system",
       "text": "3 · [Specify Connections](System%20Analysis/Connections.md)",
-      "label": "Specify Component Connections"
+      "label": "Specify Component Connections",
+      "z": 36
     },
     {
       "id": "group-logical",
@@ -331,7 +355,8 @@
       "height": 238,
       "label": "Logical Architecture",
       "text": "Logical Architecture",
-      "color": "6"
+      "color": "6",
+      "z": 6
     },
     {
       "id": "logical-todo",
@@ -345,7 +370,8 @@
       "textAlign": "center",
       "parent": "group-logical",
       "text": "_Not yet defined_\n\nLogical decomposition of the system into functional building blocks.",
-      "label": "Logical Architecture — planned"
+      "label": "Logical Architecture — planned",
+      "z": 37
     },
     {
       "id": "group-physical",
@@ -356,7 +382,8 @@
       "height": 238,
       "label": "Physical Architecture",
       "text": "Physical Architecture",
-      "color": "2"
+      "color": "2",
+      "z": 5
     },
     {
       "id": "physical-todo",
@@ -370,7 +397,8 @@
       "textAlign": "center",
       "parent": "group-physical",
       "text": "_Not yet defined_\n\nAllocation of the logical architecture onto physical components.",
-      "label": "Physical Architecture — planned"
+      "label": "Physical Architecture — planned",
+      "z": 38
     },
     {
       "id": "group-mq5sle4s-nk7ndy",
@@ -381,7 +409,8 @@
       "height": 102,
       "label": "6. State Machines",
       "text": "6. State Machines",
-      "color": "5"
+      "color": "5",
+      "z": 4
     },
     {
       "id": "node-mq5slvcv-7sh9p2",
@@ -395,7 +424,8 @@
       "textAlign": "center",
       "text": "[Statemachine1](Operational%20Analysis/statemachines/StateMachine1.md)",
       "label": "[Statemachine1](Operational%20Analysis/statemachines/StateMachine1.md)",
-      "parent": "group-mq5sle4s-nk7ndy"
+      "parent": "group-mq5sle4s-nk7ndy",
+      "z": 39
     },
     {
       "id": "node-mq5smifo-xgppbn",
@@ -409,7 +439,8 @@
       "textAlign": "center",
       "text": "[Statemachine2](Operational%20Analysis/statemachines/StateMachine2.md)",
       "label": "[Statemachine2](Operational%20Analysis/statemachines/StateMachine2.md)",
-      "parent": "group-mq5sle4s-nk7ndy"
+      "parent": "group-mq5sle4s-nk7ndy",
+      "z": 40
     },
     {
       "id": "node-mq5smwuu-f1ml2z",
@@ -423,7 +454,8 @@
       "textAlign": "center",
       "text": "[Statemachine3](Operational%20Analysis/statemachines/StateMachine3.md)",
       "label": "[Statemachine3](Operational%20Analysis/statemachines/StateMachine3.md)",
-      "parent": "group-mq5sle4s-nk7ndy"
+      "parent": "group-mq5sle4s-nk7ndy",
+      "z": 41
     },
     {
       "id": "group-mq5sps01-9git2p",
@@ -434,7 +466,8 @@
       "height": 102,
       "label": "7. Scenarios",
       "text": "7. Scenarios",
-      "color": "5"
+      "color": "5",
+      "z": 3
     },
     {
       "id": "node-mq5sps01-d2ntm5",
@@ -448,7 +481,8 @@
       "textAlign": "center",
       "text": "[Scenario1](Operational%20Analysis/scenarios/Scenario1.md)",
       "label": "[Scenario1](Operational%20Analysis/scenarios/Scenario1.md)",
-      "parent": "group-mq5sps01-9git2p"
+      "parent": "group-mq5sps01-9git2p",
+      "z": 42
     },
     {
       "id": "node-mq5sps01-hqz5hi",
@@ -462,7 +496,8 @@
       "textAlign": "center",
       "text": "[Scenario2](Operational%20Analysis/scenarios/Scenario2.md)",
       "label": "[Scenario2](Operational%20Analysis/scenarios/Scenario2.md)",
-      "parent": "group-mq5sps01-9git2p"
+      "parent": "group-mq5sps01-9git2p",
+      "z": 43
     },
     {
       "id": "node-mq5sps01-l3abtb",
@@ -476,7 +511,8 @@
       "textAlign": "center",
       "text": "[Scenario3](Operational%20Analysis/scenarios/Scenario3.md)",
       "label": "[Scenario3](Operational%20Analysis/scenarios/Scenario3.md)",
-      "parent": "group-mq5sps01-9git2p"
+      "parent": "group-mq5sps01-9git2p",
+      "z": 44
     }
   ],
   "edges": [
@@ -487,7 +523,8 @@
       "toNode": "group-operational",
       "toSide": "left",
       "toEnd": "arrow",
-      "color": "1"
+      "color": "1",
+      "z": 10
     },
     {
       "id": "edge-ops-sys",
@@ -496,7 +533,8 @@
       "toNode": "group-system",
       "toSide": "left",
       "toEnd": "arrow",
-      "color": "5"
+      "color": "5",
+      "z": 11
     },
     {
       "id": "edge-sys-logical",
@@ -505,7 +543,8 @@
       "toNode": "group-logical",
       "toSide": "left",
       "toEnd": "arrow",
-      "color": "4"
+      "color": "4",
+      "z": 12
     },
     {
       "id": "edge-logical-physical",
@@ -514,7 +553,8 @@
       "toNode": "group-physical",
       "toSide": "left",
       "toEnd": "arrow",
-      "color": "6"
+      "color": "6",
+      "z": 13
     },
     {
       "id": "edge-mq5t8593-s3dta1",
@@ -523,7 +563,8 @@
       "toNode": "group-mq5sle4s-nk7ndy",
       "toSide": "left",
       "toEnd": "arrow",
-      "color": "5"
+      "color": "5",
+      "z": 14
     },
     {
       "id": "edge-mq5t87tj-la6ijd",
@@ -532,7 +573,8 @@
       "toNode": "group-mq5sps01-9git2p",
       "toSide": "left",
       "toEnd": "arrow",
-      "color": "5"
+      "color": "5",
+      "z": 15
     }
   ],
   "oml": {

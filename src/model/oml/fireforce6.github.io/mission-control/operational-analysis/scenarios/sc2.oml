@@ -14,104 +14,104 @@ description <https://fireforce6.github.io/mission-control/operational-analysis/s
         base:description "Scenario for the human-in-the-loop approval of an AI Warden task proposal."
     ]
 
-    instance AIWarden_Lifeline : scenario:Lifeline [
+    instance AIWarden.Lifeline : scenario:Lifeline [
         base:description "AI Warden lifeline"
         scenario:lifelineOf ApproveAIWardenTask
         scenario:represents entities:AIFireWarden
     ]
 
-    instance Dashboard_Lifeline : scenario:Lifeline [
+    instance Dashboard.Lifeline : scenario:Lifeline [
         base:description "Dashboard lifeline"
         scenario:lifelineOf ApproveAIWardenTask
         scenario:represents entities:DashboardSystem
     ]
 
-    instance Operator_Lifeline : scenario:Lifeline [
+    instance Operator.Lifeline : scenario:Lifeline [
         base:description "Operator lifeline"
         scenario:lifelineOf ApproveAIWardenTask
         scenario:represents stakeholders:Operator
     ]
 
-    instance AIWarden_TP1 : scenario:TimePoint [
-        scenario:occursOn AIWarden_Lifeline
+    instance AIWarden.TP1 : scenario:TimePoint [
+        scenario:occursOn AIWarden.Lifeline
     ]
 
-    instance AIWarden_TP2 : scenario:TimePoint [
-        scenario:occursOn AIWarden_Lifeline
-        scenario:after AIWarden_TP1
+    instance AIWarden.TP2 : scenario:TimePoint [
+        scenario:occursOn AIWarden.Lifeline
+        scenario:after AIWarden.TP1
     ]
 
-    instance AIWarden_TP3 : scenario:TimePoint [
-        scenario:occursOn AIWarden_Lifeline
-        scenario:after AIWarden_TP2
+    instance AIWarden.TP3 : scenario:TimePoint [
+        scenario:occursOn AIWarden.Lifeline
+        scenario:after AIWarden.TP2
     ]
 
-    instance Dashboard_TP1 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
+    instance Dashboard.TP1 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
     ]
 
-    instance Dashboard_TP2 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP1
+    instance Dashboard.TP2 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP1
     ]
 
-    instance Dashboard_TP3 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP2
+    instance Dashboard.TP3 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP2
     ]
 
-    instance Dashboard_TP4 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP3
+    instance Dashboard.TP4 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP3
     ]
 
-    instance Dashboard_TP5 : scenario:TimePoint [
-        scenario:occursOn Dashboard_Lifeline
-        scenario:after Dashboard_TP4
+    instance Dashboard.TP5 : scenario:TimePoint [
+        scenario:occursOn Dashboard.Lifeline
+        scenario:after Dashboard.TP4
     ]
 
-    instance Operator_TP1 : scenario:TimePoint [
-        scenario:occursOn Operator_Lifeline
+    instance Operator.TP1 : scenario:TimePoint [
+        scenario:occursOn Operator.Lifeline
     ]
 
     instance M1 : scenario:Message [
         base:description "AI Warden sends structured proposal to Dashboard"
-        scenario:startsAt AIWarden_TP1
-        scenario:endsAt Dashboard_TP1
+        scenario:startsAt AIWarden.TP1
+        scenario:endsAt Dashboard.TP1
         scenario:carries items:ai_proposal
     ]
 
-    instance SF_WardenAwaiting : scenario:StateFragment [
+    instance SF.WardenAwaiting : scenario:StateFragment [
         base:description "AI Warden is AwaitingApproval while the proposal is pending."
-        scenario:atTime AIWarden_TP2
+        scenario:atTime AIWarden.TP2
         scenario:checks sm2:AwaitingApproval
     ]
 
-    instance Exec_DisplayProposal : scenario:Execution [
+    instance Exec.DisplayProposal : scenario:Execution [
         base:description "Dashboard displays AI proposal in chat interface (and shows Approve button)"
-        scenario:startsAt Dashboard_TP1
-        scenario:endsAt Dashboard_TP4
+        scenario:startsAt Dashboard.TP1
+        scenario:endsAt Dashboard.TP4
         scenario:executes processes:A4
     ]
 
     instance M3 : scenario:Message [
         base:description "Operator sends approval or rejection to dashboard"
-        scenario:startsAt Operator_TP1
-        scenario:endsAt Dashboard_TP2
+        scenario:startsAt Operator.TP1
+        scenario:endsAt Dashboard.TP2
         scenario:carries items:approval
     ]
 
-    instance Exec_ProcessApproval : scenario:Execution [
+    instance Exec.ProcessApproval : scenario:Execution [
         base:description "Dashboard processes approval"
-        scenario:startsAt Dashboard_TP2
-        scenario:endsAt Dashboard_TP3
+        scenario:startsAt Dashboard.TP2
+        scenario:endsAt Dashboard.TP3
         scenario:executes processes:A6
     ]
 
     instance M4 : scenario:Message [
         base:description "Dashboard forwards approval to AI Warden"
-        scenario:startsAt Dashboard_TP5
-        scenario:endsAt AIWarden_TP3
+        scenario:startsAt Dashboard.TP5
+        scenario:endsAt AIWarden.TP3
         scenario:carries items:approval
     ]
 
