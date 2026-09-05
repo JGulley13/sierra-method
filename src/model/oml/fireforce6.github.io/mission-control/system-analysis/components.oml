@@ -338,9 +338,134 @@ description <https://fireforce6.github.io/mission-control/system-analysis/compon
         base:isContainedBy Thruster6
     ]
 
+    instance ThrusterNozzle1 : component:Component [
+        base:description "Thruster Nozzle - Thruster 1"
+        base:isContainedBy Thruster1
+    ]
+
+    instance ThrusterNozzle2 : component:Component [
+        base:description "Thruster Nozzle - Thruster 2"
+        base:isContainedBy Thruster2
+    ]
+
+    instance ThrusterNozzle3 : component:Component [
+        base:description "Thruster Nozzle - Thruster 3"
+        base:isContainedBy Thruster3
+    ]
+
+    instance ThrusterNozzle4 : component:Component [
+        base:description "Thruster Nozzle - Thruster 4"
+        base:isContainedBy Thruster4
+    ]
+
+    instance ThrusterNozzle5 : component:Component [
+        base:description "Thruster Nozzle - Thruster 5"
+        base:isContainedBy Thruster5
+    ]
+
+    instance ThrusterNozzle6 : component:Component [
+        base:description "Thruster Nozzle - Thruster 6"
+        base:isContainedBy Thruster6
+    ]
+
+    instance PropellantInjector1 : component:Component [
+        base:description "Propellant Injector - Thruster 1"
+        base:isContainedBy Thruster1
+    ]
+
+    instance PropellantInjector2 : component:Component [
+        base:description "Propellant Injector - Thruster 2"
+        base:isContainedBy Thruster2
+    ]
+
+    instance PropellantInjector3 : component:Component [
+        base:description "Propellant Injector - Thruster 3"
+        base:isContainedBy Thruster3
+    ]
+
+    instance PropellantInjector4 : component:Component [
+        base:description "Propellant Injector - Thruster 4"
+        base:isContainedBy Thruster4
+    ]
+
+    instance PropellantInjector5 : component:Component [
+        base:description "Propellant Injector - Thruster 5"
+        base:isContainedBy Thruster5
+    ]
+
+    instance PropellantInjector6 : component:Component [
+        base:description "Propellant Injector - Thruster 6"
+        base:isContainedBy Thruster6
+    ]
+
+    instance CombustionChamber1 : component:Component [
+        base:description "Combustion Chamber - Thruster 1"
+        base:isContainedBy Thruster1
+    ]
+
+    instance CombustionChamber2 : component:Component [
+        base:description "Combustion Chamber - Thruster 2"
+        base:isContainedBy Thruster2
+    ]
+
+    instance CombustionChamber3 : component:Component [
+        base:description "Combustion Chamber - Thruster 3"
+        base:isContainedBy Thruster3
+    ]
+
+    instance CombustionChamber4 : component:Component [
+        base:description "Combustion Chamber - Thruster 4"
+        base:isContainedBy Thruster4
+    ]
+
+    instance CombustionChamber5 : component:Component [
+        base:description "Combustion Chamber - Thruster 5"
+        base:isContainedBy Thruster5
+    ]
+
+    instance CombustionChamber6 : component:Component [
+        base:description "Combustion Chamber - Thruster 6"
+        base:isContainedBy Thruster6
+    ]
+
+    instance ThrusterCatalystBed1 : component:Component [
+        base:description "Catalyst Bed - Thruster 1"
+        base:isContainedBy Thruster1
+    ]
+
+    instance ThrusterCatalystBed2 : component:Component [
+        base:description "Catalyst Bed - Thruster 2"
+        base:isContainedBy Thruster2
+    ]
+
+    instance ThrusterCatalystBed3 : component:Component [
+        base:description "Catalyst Bed - Thruster 3"
+        base:isContainedBy Thruster3
+    ]
+
+    instance ThrusterCatalystBed4 : component:Component [
+        base:description "Catalyst Bed - Thruster 4"
+        base:isContainedBy Thruster4
+    ]
+
+    instance ThrusterCatalystBed5 : component:Component [
+        base:description "Catalyst Bed - Thruster 5"
+        base:isContainedBy Thruster5
+    ]
+
+    instance ThrusterCatalystBed6 : component:Component [
+        base:description "Catalyst Bed - Thruster 6"
+        base:isContainedBy Thruster6
+    ]
+
     instance PropellantTank : component:Component [
         base:description "Hydrazine Propellant Tank - 50L"
         base:isContainedBy PropulsionSubsystem
+    ]
+
+    instance PropellantRegulator : component:Component [
+        base:description "Propellant Level Reader"
+        base:isContainedBy PropellantTank
     ]
 
     instance TankBladder : component:Component [
@@ -350,6 +475,11 @@ description <https://fireforce6.github.io/mission-control/system-analysis/compon
 
     instance TankHeater : component:Component [
         base:description "Tank Thermal Control Heater"
+        base:isContainedBy PropellantTank
+    ]
+
+    instance TankTemperatureSensor : component:Component [
+        base:description "Tank Temperature Sensor"
         base:isContainedBy PropellantTank
     ]
 

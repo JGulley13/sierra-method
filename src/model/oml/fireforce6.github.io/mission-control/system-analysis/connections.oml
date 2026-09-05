@@ -33,12 +33,35 @@ description <https://fireforce6.github.io/mission-control/system-analysis/connec
         component:hasPort Propulsion.Command_In
         component:hasPort Propulsion.Power_In
     ]
+
     instance Propulsion.Command_In : component:Port [ component:direction "In" ]
     instance Propulsion.Power_In : component:Port [ component:direction "In" ]
+    
+
+    ref instance components:PropellantTank [
+        component:hasPort PropellantTank.Propellant_Out
+    ]
+
+    instance PropellantTank.Propellant_Out : component:Port [ component:direction "Out" ]
+
+    ref instance components:PropellantFeedSystem [
+    component:hasPort PropellantFeedSystem.Propellant_In
+    component:hasPort PropellantFeedSystem.Propellant_Out
+    ]
+
+    instance PropellantFeedSystem.Propellant_In : component:Port [ component:direction "In" ]
+    instance PropellantFeedSystem.Propellant_Out : component:Port [ component:direction "Out" ]
+
+    ref instance components:PropulsionUnit [
+        component:hasPort PropulsionUnit.Propellant_In
+    ]
+
+    instance PropulsionUnit.Propellant_In : component:Port [ component:direction "In" ]
 
     instance TelemetrySignal : component:Signal []
     instance CommandSignal : component:Signal []
     instance ElectricalPower : component:Energy []
+    instance Hydrazine : component:Material []
 
     relation instance Conn_FireSatCmd_to_Platform : component:Connection [
         from FireSat.Command_In
@@ -56,6 +79,18 @@ description <https://fireforce6.github.io/mission-control/system-analysis/connec
         from Platform.Power_Out
         to Propulsion.Power_In
         component:transfers ElectricalPower
+    ]
+
+    relation instance Conn_Tank_to_FeedSystem : component:Connection [
+        from PropellantTank.Propellant_Out
+        to PropellantFeedSystem.Propellant_In
+        component:transfers Hydrazine
+    ]
+
+    relation instance Conn_FeedSystem_to_PropulsionUnit : component:Connection [
+        from PropellantFeedSystem.Propellant_Out
+        to PropulsionUnit.Propellant_In
+        component:transfers Hydrazine
     ]
 
     relation instance Conn_Payload_to_Platform : component:Connection [

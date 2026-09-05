@@ -46,4 +46,12 @@ description <https://fireforce6.github.io/mission-control/context-analysis/conce
         base:priority "High"
         base:category "Need"
     ]
+
+    @rdfs:label "Incident Commander Needs"
+    instance IncidentCommanderNeeds : stakeholder:Concern [
+        base:description "Comprehensive situational awareness and authority to authorize high-impact actions."
+        stakeholder:isExpressedBy stakeholders:IncidentCommander
+        base:priority "High"
+        base:category "Need"
+    ]
 }

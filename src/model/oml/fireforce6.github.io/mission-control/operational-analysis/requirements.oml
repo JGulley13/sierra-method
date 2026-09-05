@@ -61,4 +61,29 @@ description <https://fireforce6.github.io/mission-control/operational-analysis/r
         base:category "L2"
         base:priority "Medium"
     ]
+
+    instance R8 : stakeholder:Requirement [
+        base:description "Data Security"
+        base:expression "The system shall ensure secure handling and transmission of sensitive data."
+        stakeholder:isStatedBy stakeholders:SystemsEngineer
+        base:category "L1"
+        base:priority "High"
+    ]
+
+    instance R9 : stakeholder:Requirement [
+        base:description "System Latency"
+        base:expression "The system shall maintain low latency for real-time data processing and display."
+        stakeholder:isStatedBy stakeholders:SystemsEngineer
+        base:category "L1"
+        base:priority "High"
+    ]
+
+    instance R10 : stakeholder:Requirement [
+        base:description "User Training"
+        base:expression "The system shall provide training modules for operators and firefighters."
+        stakeholder:isStatedBy stakeholders:Operator
+        base:category "L2"
+        base:priority "Low"
+    ]
+
 }

@@ -158,6 +158,102 @@ description <https://fireforce6.github.io/mission-control/system-analysis/masses
         component:mass 0.8^^si:kg
     ]
 
+    ref instance components:CombustionChamber1 : component:PhysicalPart [
+        component:mass 1.5^^si:kg
+    ]
+
+    ref instance components:CombustionChamber2 : component:PhysicalPart [
+        component:mass 1.5^^si:kg
+    ]
+
+    ref instance components:CombustionChamber3 : component:PhysicalPart [
+        component:mass 1.5^^si:kg
+    ]
+
+    ref instance components:CombustionChamber4 : component:PhysicalPart [
+        component:mass 1.5^^si:kg
+    ]
+
+    ref instance components:CombustionChamber5 : component:PhysicalPart [
+        component:mass 1.5^^si:kg
+    ]
+
+    ref instance components:CombustionChamber6 : component:PhysicalPart [
+        component:mass 1.5^^si:kg
+    ]
+
+    ref instance components:PropellantInjector1 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:PropellantInjector2 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:PropellantInjector3 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:PropellantInjector4 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:PropellantInjector5 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:PropellantInjector6 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:ThrusterCatalystBed1 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:ThrusterCatalystBed2 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:ThrusterCatalystBed3 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:ThrusterCatalystBed4 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:ThrusterCatalystBed5 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:ThrusterCatalystBed6 : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    ref instance components:ThrusterNozzle1 : component:PhysicalPart [
+        component:mass 0.8^^si:kg
+    ]
+
+    ref instance components:ThrusterNozzle2 : component:PhysicalPart [
+        component:mass 0.8^^si:kg
+    ]
+
+    ref instance components:ThrusterNozzle3 : component:PhysicalPart [
+        component:mass 0.8^^si:kg
+    ]
+
+    ref instance components:ThrusterNozzle4 : component:PhysicalPart [
+        component:mass 0.8^^si:kg
+    ]
+
+    ref instance components:ThrusterNozzle5 : component:PhysicalPart [
+        component:mass 0.8^^si:kg
+    ]
+
+    ref instance components:ThrusterNozzle6 : component:PhysicalPart [
+        component:mass 0.8^^si:kg
+    ]
+
     ref instance components:TankBladder : component:PhysicalPart [
         component:mass 1^^si:kg
     ]
@@ -169,6 +265,16 @@ description <https://fireforce6.github.io/mission-control/system-analysis/masses
     ref instance components:PressureRegulator : component:PhysicalPart [
         component:mass 0.5^^si:kg
     ]
+
+    ref instance components:TankTemperatureSensor : component:PhysicalPart [
+        component:mass 0.1^^si:kg
+    ]
+
+    ref instance components:PropellantRegulator : component:PhysicalPart [
+        component:mass 0.5^^si:kg
+    ]
+
+    
 
     ref instance components:PropellantFilter : component:PhysicalPart [
         component:mass 0.2^^si:kg

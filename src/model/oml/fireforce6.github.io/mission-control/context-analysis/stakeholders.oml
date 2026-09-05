@@ -35,4 +35,10 @@ description <https://fireforce6.github.io/mission-control/context-analysis/stake
         base:description "Ensures alerts, communications, and responses comply with safety protocols."
         base:category "Support"
     ]
+
+    @rdfs:label "Incident Commander"
+    instance IncidentCommander : stakeholder:Stakeholder [
+        base:description "Leads the wildfire response, coordinates teams, and authorizes high-impact containment actions."
+        base:category "Decision Maker"
+]
 }
