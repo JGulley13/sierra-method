@@ -64,10 +64,13 @@
     <td>8. <a href="./Operational%20Analysis/Requirements.md">Define Operational Requirements</a></td>
   </tr>
   <tr>
-    <td>9. <a href="./Operational%20Analysis/Dashboard.md">View Operations Dashboard</a></td>
+    <td> 9. <a href="./Operational%20Analysis/Verifications.md">Define Verification Cases</a></td>
   </tr>
   <tr>
-    <td>10. <a href="./Operational%20Analysis/Dashboard2.md">View Operations Dashboard2 (WASM Notebook)</a></td>
+    <td>10. <a href="./Operational%20Analysis/Dashboard.md">View Operations Dashboard</a></td>
+  </tr>
+  <tr>
+    <td>11. <a href="./Operational%20Analysis/Dashboard2.md">View Operations Dashboard2 (WASM Notebook)</a></td>
   </tr>
 </table>
 
