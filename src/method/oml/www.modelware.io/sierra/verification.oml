@@ -1,0 +1,48 @@
+@dc:title "Verification vocabulary"
+@dc:description "Defines verification concepts."
+vocabulary <https://www.modelware.io/sierra/verification#> as verification {
+    extends <http://purl.org/dc/elements/1.1/> as dc
+    extends <https://www.modelware.io/sierra/base#> as base
+    extends <https://www.modelware.io/sierra/stakeholder#> as stakeholder
+
+    @dc:description "The method by which a requirement is verified."
+    scalar VerificationMethod [
+        oneOf "Inspection", "Analysis", "Demonstration", "Test"
+    ]
+
+    @dc:description "The status of the verification."
+    scalar VerificationStatus [
+        oneOf "Not Started", "In Progress", "Passed", "Failed"
+    ]
+
+    @dc:description "A verification case demonstrates that a requirement has beensatisfied."
+    concept VerificationCase < base:Categorized, base:Element, base:Expressible
+
+    @dc:description "The method by which the verification case is performed."
+    scalar property method [
+        domain VerificationCase
+        range VerificationMethod
+        functional
+    ]
+
+    @dc:description "The status of the verification case."
+    scalar property status [
+        domain VerificationCase
+        range VerificationStatus
+        functional
+    ]
+
+    @dc:description "Indicates that a verification case verifies a requirement."
+    relation verifies [
+        from VerificationCase
+        to stakeholder:Requirement
+        reverse isVerifiedBy
+    ]
+
+    @dc:description "Indicates a VerificationCase is supported by evidence."
+    relation hasEvidence [
+        from VerificationCase
+        to base:Element
+        reverse isEvidenceFor
+    ]
+}

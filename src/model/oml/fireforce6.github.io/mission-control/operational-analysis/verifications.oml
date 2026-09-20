@@ -1,0 +1,39 @@
+@dc:title "Verification Description"
+@dc:description "Description of verification activities for the Mission Control system."
+description <https://fireforce6.github.io/mission-control/operational-analysis/verifications#> as verifications {
+    uses <http://purl.org/dc/elements/1.1/> as dc
+    uses <https://www.modelware.io/sierra/base#> as base
+    uses <https://www.modelware.io/sierra/verification#> as verification
+    extends <https://fireforce6.github.io/mission-control/operational-analysis/requirements#> as requirements
+    extends <https://fireforce6.github.io/mission-control/operational-analysis/scenarios/sc1#> as sc1
+    extends <https://fireforce6.github.io/mission-control/system-analysis/components#> as components
+
+    instance VC1 : verification:VerificationCase [
+        verification:verifies requirements:R2
+        verification:status "Passed"
+        verification:hasEvidence sc1:RespondToCriticalNotification
+        verification:method "Test"
+        base:expression "A critical fire alert originating from Fire Cloud is displayed  on the Operator Dashboard within the required time."
+        base:description "Critical alert display test"
+        base:category "Safety"
+    ]
+
+    instance VC2 : verification:VerificationCase [
+        verification:verifies requirements:R9
+        verification:method "Analysis"
+        verification:status "Not Started"
+        base:expression "Latency from Fire Cloud data ingestion to Dashboard update is under allocated budget"
+        base:description "End-to-end latency budget test"
+        base:category "Performance"
+    ]
+
+    instance VC3 : verification:VerificationCase [
+        verification:verifies requirements:R8
+        verification:method "Inspection"
+        verification:status "Passed"
+        base:expression "The Comm Unit's data transmission is encrypted"
+        base:description "Comm unit security inspection"
+        base:category "Security"
+        verification:hasEvidence components:CommUnit
+    ]
+}
