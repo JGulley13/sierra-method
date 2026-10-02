@@ -72,6 +72,9 @@
   <tr>
     <td>11. <a href="./Operational%20Analysis/Dashboard2.md">View Operations Dashboard2 (WASM Notebook)</a></td>
   </tr>
+  <tr>
+    <td>12. <a href="./Operational%20Analysis/Traceability%20Dashboard.md">View Traceability Dashboard</a></td>
+  </tr>
 </table>
 
 ## System Analysis
