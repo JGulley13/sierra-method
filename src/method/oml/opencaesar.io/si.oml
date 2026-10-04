@@ -183,4 +183,22 @@ vocabulary <http://opencaesar.io/si/> as si {
         symbol "cd"
         multiplier 1.0
     ]
+
+    //
+    // Power
+    //
+
+    @dc:description "The watt, the SI derived unit of power."
+    unit W [
+        measures isq:Power
+        symbol "W"
+        multiplier 1.0
+    ]
+
+    @dc:description "The milliwatt, a unit of power (0.001 W)."
+    unit mW [
+        measures isq:Power
+        symbol "mW"
+        multiplier 0.001
+    ]
 }

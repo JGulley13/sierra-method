@@ -25,6 +25,7 @@ columns: { this: { label: "Component" } }
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix component: <https://www.modelware.io/sierra/component#> .
+@prefix stakeholder: <https://www.modelware.io/sierra/stakeholder#> .
 
 component:ComponentShape
     a sh:NodeShape ;
@@ -41,6 +42,11 @@ component:ComponentShape
         sh:name "Description" ;
         dash:editor dash:TextAreaEditor ;
         sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path component:satisfies ;
+        sh:name "Satisfies" ;
+        sh:class stakeholder:Requirement ;
     ] ;
     sh:property [
         sh:path rdfs:seeAlso ;

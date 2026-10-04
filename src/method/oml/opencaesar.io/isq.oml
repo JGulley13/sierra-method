@@ -41,4 +41,9 @@ vocabulary <http://opencaesar.io/isq/> as isq {
     quantity LuminousIntensity [
         dimension "J1"
     ]
+
+    @dc:description "The physical quantity of power (dimension M L2 T-3)."
+    quantity Power [
+        dimension "M1 L2 T-3"
+    ]
 }

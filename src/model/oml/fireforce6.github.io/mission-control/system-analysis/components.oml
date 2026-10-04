@@ -5,6 +5,8 @@ description <https://fireforce6.github.io/mission-control/system-analysis/compon
     uses <https://www.modelware.io/sierra/base#> as base
     uses <https://www.modelware.io/sierra/component#> as component
     uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    extends <https://fireforce6.github.io/mission-control/operational-analysis/requirements#> as requirements
+    uses <http://opencaesar.io/si/> as si
 
     instance Payload : component:Component [
         base:description "Wildfire Detection Payload"
@@ -1015,5 +1017,12 @@ description <https://fireforce6.github.io/mission-control/system-analysis/compon
 
     instance FireSat : component:Component [
         base:description "FireSat Spacecraft"
+    ]
+
+    instance AlertTransmitter : component:PhysicalPart [
+        base:description "Alert Transmitter"
+        base:isContainedBy CommunicationSubsystem
+        component:satisfies requirements:R11
+        component:power 15^^si:W
     ]
 }

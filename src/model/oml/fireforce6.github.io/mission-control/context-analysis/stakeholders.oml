@@ -40,5 +40,11 @@ description <https://fireforce6.github.io/mission-control/context-analysis/stake
     instance IncidentCommander : stakeholder:Stakeholder [
         base:description "Leads the wildfire response, coordinates teams, and authorizes high-impact containment actions."
         base:category "Decision Maker"
-]
+    ]
+
+    @rdfs:label "Civilian"
+    instance Civilian : stakeholder:Stakeholder [
+        base:description "Member of the public living or working in areas at risk of wildfire."
+        base:category "Beneficiary"
+    ]
 }

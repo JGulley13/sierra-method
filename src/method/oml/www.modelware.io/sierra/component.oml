@@ -7,6 +7,8 @@ vocabulary <https://www.modelware.io/sierra/component#> as component {
 
 	extends <http://opencaesar.io/isq/> as isq
 
+    extends <https://www.modelware.io/sierra/stakeholder#> as stakeholder
+
     @dc:description "A component is a part of a system."
     concept Component < base:Container, base:Contained, base:Element
 
@@ -18,6 +20,20 @@ vocabulary <https://www.modelware.io/sierra/component#> as component {
         domain PhysicalPart
         quantity isq:Mass
         functional
+    ]
+
+    @dc:description "The power consumption of the physical part."
+    quantity property power [
+        domain PhysicalPart
+        quantity isq:Power
+        functional
+    ]
+
+    @dc:description "Indicates that a component satisfies a requirement."
+    relation satisfies [
+        from Component
+        to stakeholder:Requirement
+        reverse isSatisfiedBy
     ]
 
     @dc:description "The interface of a component."

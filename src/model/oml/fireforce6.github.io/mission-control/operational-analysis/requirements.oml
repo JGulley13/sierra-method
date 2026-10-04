@@ -64,7 +64,7 @@ description <https://fireforce6.github.io/mission-control/operational-analysis/r
 
     // Note to professors about task 5 "Trace one requirment to a concern and a capability"
     // There is no precedent for creating traces between requirements and concerns or capabilities.
-    // I also could not find a suitable relationship without adding to Sierra vocabulary (you asked us not to). 
+    // I also could not find a suitable relationship without adding to Sierra vocabulary (you asked us not to).
     // Therefore, I'm sticking to the convention of requirement > Stakeholder > Concern > Capability.
     instance R8 : stakeholder:Requirement [
         base:description "Data Security"
@@ -90,4 +90,11 @@ description <https://fireforce6.github.io/mission-control/operational-analysis/r
         base:priority "Low"
     ]
 
+    instance R11 : stakeholder:Requirement [
+        base:description "Emergency Alerts"
+        base:expression "The system shall broadcast emergency alerts."
+        stakeholder:isStatedBy stakeholders:Civilian
+        base:category "L1"
+        base:priority "High"
+    ]
 }

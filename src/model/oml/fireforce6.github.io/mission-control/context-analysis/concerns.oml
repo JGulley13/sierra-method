@@ -54,4 +54,12 @@ description <https://fireforce6.github.io/mission-control/context-analysis/conce
         base:priority "High"
         base:category "Need"
     ]
+
+    @rdfs:label "Civilian Needs"
+    instance CivilianNeeds : stakeholder:Concern [
+        base:description "Receive emergency alerts if a fire is spotted in their area."
+        stakeholder:isExpressedBy stakeholders:Civilian
+        base:category "Need"
+        base:priority "High"
+    ]
 }
